@@ -1,0 +1,88 @@
+:root{
+  --bg:#0b101a;
+  --panel:#111827;
+  --muted:#9ca3af;
+  --text:#e5e7eb;
+  --up:#16a34a;
+  --down:#dc2626;
+  --neutral:#6b7280;
+  --accent:#3b82f6;
+}
+
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container{
+  width: min(1100px, 92%);
+  margin-inline: auto;
+}
+
+.header{
+  border-bottom: 1px solid #1f2937;
+  position: sticky; top:0; z-index:10;
+  background: rgba(11,16,26,0.8); backdrop-filter: blur(6px);
+}
+.header-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 16px 0;
+}
+.brand{ margin:0; font-size: clamp(20px, 3vw, 28px); letter-spacing: 0.3px;}
+.date{ color: var(--muted); font-weight: 500; }
+
+.app main{ padding: 24px 0; display: grid; gap: 24px; }
+.panel{
+  background: var(--panel);
+  border: 1px solid #1f2937;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+}
+.panel-title{
+  margin: 6px 4px 14px;
+  font-size: 18px;
+  color: #cbd5e1;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+@media (max-width: 800px){
+  .grid{ grid-template-columns: 1fr; }
+}
+
+.coin-card{
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  padding: 14px;
+  background: #0e1624;
+}
+.coin-row{ display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; }
+.coin-name{ font-size: 16px; }
+.symbol{ color: var(--muted); }
+.coin-price{ font-weight:700; }
+
+.coin-change{ font-weight:600; }
+.coin-change.up{ color: var(--up); }
+.coin-change.down{ color: var(--down); }
+.coin-change.neutral{ color: var(--neutral); }
+
+.status{ padding:10px 12px; border-radius: 10px; background:#0e1624; border:1px solid #1f2937; color: var(--muted); margin: 8px 4px 16px; }
+.status.error{ color:#fca5a5; border-color:#7f1d1d; background:#1b1214; }
+
+.chart-wrap{ width: 100%; height: 300px; }
+
+.footer{
+  border-top: 1px solid #1f2937;
+  margin-top: 12px;
+}
+.footer span{
+  display:block; text-align:center; color: var(--muted); padding: 16px 0 28px;
+}
